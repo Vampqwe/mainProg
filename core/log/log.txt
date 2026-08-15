@@ -1,0 +1,8 @@
+-------------------Общий файл логирования ошибок--------------------
+(main)2024-06-16__23:57:22---> Сonfig name *db_drdiver* does not exist!
+(DataBase)2024-06-16__23:58:05---> Сonfig name *db_drdiver* does not exist!
+(DataBase)2024-06-16__23:59:30---> SQLSTATE[HY000] [1524] Plugin 'mysql_native_password' is not loaded
+(DataBase)2024-06-17__00:06:56---> SQLSTATE[HY000] [1045] Access denied for user 'Vampqwen'@'localhost' (using password: YES)
+(DataBase)2024-06-17__00:16:24---> SQLSTATE[HY000] [1045] Access denied for user 'Vampqwen'@'localhost' (using password: YES)
+(DataBase)2024-06-17__00:17:03---> could not find driver
+(DataBase)2024-06-17__00:19:05---> could not find driver

@@ -1,0 +1,14 @@
+{
+    "name": "vampqwe/inventory",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Vampqwe",
+            "email": "doktor_try@mail.ru"
+        }
+    ],
+	"autoload": {
+        "classmap": ["core/classes/"]
+    },
+    "require": {}
+}
