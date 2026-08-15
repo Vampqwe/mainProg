@@ -11,46 +11,41 @@ include("../vendor/autoload.php");
         <meta http-equiv="Cache-Control" content="no-store">
     </head>
 <body>
-<div id = "header">
-    <p class = "logo">Административная панель</p>
-</div>
-    <div class = "content">
-    <?php
-    $ums = new UMS();
-    $ums->update();
-    
-    var_dump($_SESSION);
-    ?>
+    <div id="layout">
+        <div id="header">
+            <p class="logo">Административная панель</p>
+        </div>
 
-        <div id='grid-container'>
-            <div>
-                
-            </div>
-            <div>
+        <div id="nav">
+            <a href="">Главная</a>
+            <a href="">Пользователи</a>
+            <a href="">Настройки</a>
+        </div>
+
+        <div id="aside">
             <nav class="user-menu">
-                    <h4>Пользователи</h4>
-                    <ul>
-                        <li><a href=""></a>Добавить</li>
-                        <li><a href=""></a>Удалить</li>
-                        <li><a href=""></a>Найти</li>
-                        <li><a href=""></a>Изменить</li>
-                    </ul>
+                <h4>Пользователи</h4>
+                <ul>
+                    <li><a href="">Добавить</a></li>
+                    <li><a href="">Удалить</a></li>
+                    <li><a href="">Найти</a></li>
+                    <li><a href="">Изменить</a></li>
+                </ul>
 
-                    <h4>Настройки сайта</h4>
-                    <ul>
-                        <li><a href=""></a>База данных</li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                    </ul>
+                <h4>Настройки сайта</h4>
+                <ul>
+                    <li><a href="">База данных</a></li>
+                </ul>
+            </nav>
+        </div>
 
-                </nav>
-            </div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
+        <div id="main">
+            <h3>Контент</h3>
+        </div>
+
+        <div class="footer">
+            <p>&copy; vampqwe/inventory</p>
         </div>
     </div>
-<div class = "footer"></div>
 </body>
 </html>
