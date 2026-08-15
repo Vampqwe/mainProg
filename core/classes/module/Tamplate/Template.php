@@ -18,7 +18,19 @@ class Template {
         }
     }
 
-    public function readTplFile () {
-        $this->File->readFile();
+    public function readTplFile ():string {
+        return (string)$this->File->readFile();
+    }
+
+    public function assign (string $key, string $value):void {
+        $this->Map->put($key, $value);
+    }
+
+    public function render ():string {
+        $content = $this->readTplFile();
+        foreach ($this->Map->getArrayObject() as $key => $value) {
+            $content = str_replace('{'.$key.'}', (string)$value, $content);
+        }
+        return $content;
     }
 }

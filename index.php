@@ -1,8 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-use Filter\FilterException;
-
 include ('vendor/autoload.php');
 //$link = parse_url($_SERVER('REQUEST_URL'));
 $accData = [

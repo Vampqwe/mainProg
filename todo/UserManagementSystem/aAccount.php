@@ -33,7 +33,7 @@ class Account extends UMS{
     }
 
     public function getIsAuth () {
-        return self::$accData['isAuh'];
+        return self::$accData['isAuth'];
     }
 
     /** возвращает информацию аккаунта из базы данных,
