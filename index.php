@@ -12,9 +12,12 @@ $accData = [
     'access' => 1,
     'isAuth' => 1
     ];
+$linkHtml = '';
 try{
     $t = new Template();
     $t->addTplFile(Route::getPathCore()."TPL/link.tpl");
+    $t->assignArray(['linc' => '/', 'titleLinc' => 'Главная']);
+    $linkHtml = $t->render();
 }catch(FileException $FEXC) {
     echo $FEXC->getMessage();
 }
@@ -28,7 +31,7 @@ try{
 <body>
     <div id="layout">
         <div id='grid-container'>
-            <div>1</div>
+            <div><?= $linkHtml ?></div>
             <div>2</div>
             <div>3</div>
             <div>

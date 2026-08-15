@@ -22,8 +22,14 @@ class Template {
         return (string)$this->File->readFile();
     }
 
-    public function assign (string $key, string $value):void {
-        $this->Map->put($key, $value);
+    public function assign (string $key, string|int|float $value):void {
+        $this->Map->put($key, (string)$value);
+    }
+
+    public function assignArray (array $data):void {
+        foreach ($data as $key => $value) {
+            $this->assign((string)$key, $value);
+        }
     }
 
     public function render ():string {
@@ -32,5 +38,9 @@ class Template {
             $content = str_replace('{'.$key.'}', (string)$value, $content);
         }
         return $content;
+    }
+
+    public function display ():void {
+        echo $this->render();
     }
 }
