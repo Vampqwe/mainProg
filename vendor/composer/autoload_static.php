@@ -14,6 +14,7 @@ class ComposerStaticInit5ca6c98e5b23bdb198ad1a42af10b79c
         'Config' => __DIR__ . '/../..' . '/core/classes/system/Config/Config.php',
         'ConfigException' => __DIR__ . '/../..' . '/core/classes/system/Config/ConfigException.php',
         'DataBase' => __DIR__ . '/../..' . '/core/classes/system/Database/DataBase.php',
+        'DbTable' => __DIR__ . '/../..' . '/core/classes/system/Database/DbTable.php',
         'File' => __DIR__ . '/../..' . '/core/classes/system/File/File.php',
         'FileException' => __DIR__ . '/../..' . '/core/classes/system/File/FileException.php',
         'Logger' => __DIR__ . '/../..' . '/core/classes/system/Logger/Logger.php',
