@@ -27,7 +27,7 @@ class Map {
         return ($this->ArrayObject->offsetExists($key));
     }
     
-    public function getValueByKey (string|int $key):string|int|bool {
+    public function getValueByKey (string|int $key):mixed {
         if ($this->checkKeyExists($key)):
             return ($this->ArrayObject->offsetGet($key));
         endif;
@@ -40,5 +40,17 @@ class Map {
     
     public function deleteValueByKey(string|int $key):void {
         $this->ArrayObject->offsetUnset($key);
+    }
+    
+    public function getKeys ():array {
+        return (array_keys($this->ArrayObject->getArrayCopy()));
+    }
+    
+    public function toArray ():array {
+        return ($this->ArrayObject->getArrayCopy());
+    }
+    
+    public function isEmpty ():bool {
+        return ($this->ArrayObject->count() === 0);
     }
 }
