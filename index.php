@@ -26,9 +26,9 @@ try{
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="/style/style.css">
     </head>
-<body>
+<body class="site">
     <div id="layout">
         <div id='grid-container'>
             <div><?= $linkHtml ?></div>

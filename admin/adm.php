@@ -7,10 +7,10 @@ include("../vendor/autoload.php");
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="admStyle.css">
+        <link rel="stylesheet" href="/admin/admStyle.css">
         <meta http-equiv="Cache-Control" content="no-store">
     </head>
-<body>
+<body class="admin">
     <div id="layout">
         <div id="header">
             <p class="logo">Административная панель</p>
