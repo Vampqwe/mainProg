@@ -13,10 +13,11 @@ class DataBase extends PDO{
 	public function __construct () {
 		$this->Config = new Config();
 		$this->Logger = new Logger();
+		$this->mySqlDb();
 	}
 
-	public function getDbCon () {
-		return $this->mySqlDb();
+	public function getDbCon ():self {
+		return $this;
 	}
 	
 	private function mySqlDb ():void {
@@ -30,8 +31,10 @@ class DataBase extends PDO{
 							$this->options);
 		}catch(ConfigException $cExc){
 			$this->Logger->inLog($cExc->getMessage(), 'DataBase');
+			throw $cExc;
 		}catch(PDOException $dbExc){
 			$this->Logger->inLog($dbExc->getMessage(), 'DataBase');
+			throw $dbExc;
 		}
 	}
 	

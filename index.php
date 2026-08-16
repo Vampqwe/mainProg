@@ -1,8 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-use Filter\FilterException;
-
 include ('vendor/autoload.php');
 //$link = parse_url($_SERVER('REQUEST_URL'));
 $accData = [
@@ -14,9 +12,12 @@ $accData = [
     'access' => 1,
     'isAuth' => 1
     ];
+$linkHtml = '';
 try{
     $t = new Template();
     $t->addTplFile(Route::getPathCore()."TPL/link.tpl");
+    $t->assignArray(['linc' => '/', 'titleLinc' => 'Главная']);
+    $linkHtml = $t->render();
 }catch(FileException $FEXC) {
     echo $FEXC->getMessage();
 }
@@ -25,12 +26,12 @@ try{
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="/style/style.css">
     </head>
-<body>
+<body class="site">
     <div id="layout">
         <div id='grid-container'>
-            <div>1</div>
+            <div><?= $linkHtml ?></div>
             <div>2</div>
             <div>3</div>
             <div>

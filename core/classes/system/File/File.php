@@ -30,11 +30,10 @@ class File {
     }
 
     public function createFile ($mode = 'w') {
-        if (!fopen($this->getFile(), $mode)) {
+        $this->openFile = fopen($this->getFile(), $mode);
+        if (!$this->openFile) {
             throw new FileException('не удалось создать файл!');
         }
-        $this->openFile = fopen($this->getFile(), $mode);
-        
     }
 
     public function readFile () {
@@ -44,8 +43,10 @@ class File {
     }
 
     public function closeFile () {
-        $this->file = $this->getFile();
-        fclose($this->file);
+        if ($this->openFile) {
+            fclose($this->openFile);
+            $this->openFile = null;
+        }
     }
 
     public function putToFile (string $string, $mode = FILE_APPEND) {
