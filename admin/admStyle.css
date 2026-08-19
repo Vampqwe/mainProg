@@ -1,11 +1,15 @@
-body.admin * { box-sizing: border-box; }
+/* Современный дизайн админ-панели в красно-черно-бело-серой гамме */
+
+body.admin * { 
+    box-sizing: border-box; 
+}
 
 html, body.admin {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 /* Каркас страницы: отступы по краям 50px */
@@ -18,85 +22,159 @@ body.admin #layout {
         "nav    nav"
         "aside  main"
         "footer footer";
-    gap: 5px;
+    gap: 10px;
     min-height: calc(100vh - 100px);
     margin: 50px;
-    border: 3px solid #000;
-    padding: 5px;
+    border: none;
+    padding: 10px;
 }
 
 body.admin #header {
     grid-area: header;
-    background-color: #000;
-    color: #e9e9e9;
+    background: linear-gradient(145deg, #D32F2F 0%, #b71c1c 100%);
+    color: #ffffff;
     display: flex;
     align-items: center;
     padding: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
 }
 
 body.admin .logo {
-    color: #e9e9e9;
+    color: #ffffff;
     margin: 0;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 body.admin #nav {
     grid-area: nav;
-    background-color: #333;
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
     display: flex;
     align-items: center;
     padding: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 body.admin #nav a {
     color: #e9e9e9;
     text-decoration: none;
     margin-right: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+body.admin #nav a:hover {
+    background: rgba(211, 47, 47, 0.2);
+    color: #ffffff;
 }
 
 body.admin #aside {
     grid-area: aside;
-    background-color: #efefef;
-    border-right: 3px solid #000;
-    padding: 15px;
+    background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.admin #main {
     grid-area: main;
-    background-color: #ffffff;
-    padding: 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+    padding: 25px;
     overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.admin .footer {
     grid-area: footer;
-    background-color: #000;
-    color: #e9e9e9;
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #bdbdbd;
     display: flex;
     align-items: center;
     padding: 0 20px;
     font-size: 13px;
+    border-radius: 8px;
 }
 
 body.admin .user-menu h4 {
-    margin: 10px 0 5px;
+    margin: 15px 0 10px;
+    color: #D32F2F;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
 }
 
 body.admin .user-menu ul {
     list-style: none;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
     padding: 0;
 }
 
 body.admin .user-menu li {
-    padding: 4px 0;
+    padding: 6px 0;
 }
 
 body.admin .user-menu a {
-    color: #222;
+    color: #333;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 body.admin .user-menu a:hover {
-    text-decoration: underline;
+    background: rgba(211, 47, 47, 0.1);
+    color: #D32F2F;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.content-title {
+    color: #D32F2F;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.content-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #D32F2F;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D32F2F;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }

@@ -3,12 +3,13 @@ declare(strict_types = 1);
 include("../vendor/autoload.php");
 ?>
 
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="/admin/admStyle.css">
         <meta http-equiv="Cache-Control" content="no-store">
+        <title>Административная панель</title>
     </head>
 <body class="admin">
     <div id="layout">
@@ -17,9 +18,9 @@ include("../vendor/autoload.php");
         </div>
 
         <div id="nav">
-            <a href="">Главная</a>
-            <a href="">Пользователи</a>
-            <a href="">Настройки</a>
+            <a href="" class="nav-link">Главная</a>
+            <a href="" class="nav-link">Пользователи</a>
+            <a href="" class="nav-link">Настройки</a>
         </div>
 
         <div id="aside">
@@ -40,7 +41,10 @@ include("../vendor/autoload.php");
         </div>
 
         <div id="main">
-            <h3>Контент</h3>
+            <h3 class="content-title">Контент</h3>
+            <div class="content-card">
+                <p>Добро пожаловать в административную панель</p>
+            </div>
         </div>
 
         <div class="footer">
