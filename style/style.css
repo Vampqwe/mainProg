@@ -1,58 +1,164 @@
+/* Современный дизайн в красно-черно-бело-серой гамме */
+
 body.site {
     margin: 0px;
-    background-image: url("img/abstract-1850424_1920.jpg");
-    background-size: no-repeat;
-    background-position: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body.site #layout {
     margin-left: 7%;
 }
-body.site * {box-sizing: border-box; }
+
+body.site * {
+    box-sizing: border-box;
+}
+
 body.site #grid-container {
-    /* background: rgb(0, 150, 208);  */
     display: inline-grid; 
     height: 1320px; 
     grid-template-columns: 200px 800px 200px; 
     grid-template-rows: 100px 50px 1100px 50px; 
-    grid-column-gap: 5px; 
-    grid-row-gap: 5px; 
+    grid-column-gap: 10px; 
+    grid-row-gap: 10px; 
     align-content: center; 
 }
+
 body.site #grid-container > div {
-    background: rgb(241, 101, 41); 
-    border: 1px solid; 
+    background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+    border: 1px solid #e0e0e0;
     margin: 0px; 
-    padding: 5px; 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
+
+body.site #grid-container > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(211, 47, 47, 0.15);
+    border-color: #D32F2F;
+}
+
 body.site #grid-container > div:nth-of-type(1) {
     width: 1210px; 
     grid-column-start: 1; 
-    grid-column-end: 4; 
+    grid-column-end: 4;
+    background: linear-gradient(145deg, #D32F2F 0%, #b71c1c 100%);
+    color: white;
+    border: none;
 }
+
+body.site #grid-container > div:nth-of-type(1):hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
 body.site #grid-container > div:nth-of-type(2) {
     grid-column-start: 1; 
     grid-column-end: 4; 
-    width: 1210px; 
+    width: 1210px;
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: white;
+    border: none;
 }
-/* 
-body.site #grid-container > div:nth-of-type(3) {
 
+body.site #grid-container > div:nth-of-type(2):hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-body.site #grid-container > div:nth-of-type(4) {
 
-} 
-*/
 body.site #grid-container > div:nth-of-type(6) {
-    width: 1210px; 
+    width: 1210px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #bdbdbd;
+    border: none;
+    text-align: center;
 }
 
 body.site .news {
-    border: 1px solid black;
+    border: 2px solid #D32F2F;
     width: 750px;
-    height: 300px;
-    margin: auto;
-    border-radius: 5px;
+    height: auto;
+    min-height: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.1);
+    padding: 20px;
+}
+
+.news-title {
+    color: #D32F2F;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body.site .newsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+body.site .newsTable th {
+    background: linear-gradient(145deg, #D32F2F 0%, #b71c1c 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+body.site .newsTable td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+body.site .newsTable tr.table-content td {
+    background: #fafafa;
+    font-style: italic;
+    color: #666;
+}
+
+body.site .newsTable tr:hover td {
+    background: linear-gradient(90deg, rgba(211, 47, 47, 0.05) 0%, rgba(211, 47, 47, 0.1) 100%);
+}
+
+body.site .newsTable tr:last-child td {
+    border-bottom: none;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
 }
