@@ -1,8 +1,4 @@
-# Локальная конфигурация с секретами (используйте core/config.example.ini как образец)
-core/config.ini
-
-# Логи
-core/log/*.txt
-
-# Настройки IDE
-.project
+```
+# Executable/binary files
+mainProg
+```
