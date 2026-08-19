@@ -27,42 +27,43 @@ try{
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="/style/style.css">
+        <title>Главная - mainProg</title>
     </head>
 <body class="site">
     <div id="layout">
         <div id='grid-container'>
-            <div><?= $linkHtml ?></div>
-            <div>2</div>
-            <div>3</div>
-            <div>
+            <div class="card header-card"><?= $linkHtml ?></div>
+            <div class="card nav-card">Навигация</div>
+            <div class="card sidebar-card">Боковая панель</div>
+            <div class="card content-card">
                 <div id = "regTable">
                     
                 </div>
             <!-- Таблица новостей -->
             <div class="news">
+                <h3 class="news-title">Последние новости</h3>
                 <table class="newsTable">
-	            <tbody>
-		        <tr>
-			        <td>id</td>
-			        <td>title</td>
-			        <td>autor</td>
-		        </tr>
-		        <tr>
-			        <td colspan="3">content</td>
-		        </tr>
-		        <tr>
-			        <td>date</td>
-			        <td></td>
-			        <td>link</td>
-		        </tr>
-	            </tbody>
+            <tbody>
+                <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>autor</th>
+                </tr>
+                <tr class="table-content">
+                <td colspan="3">content</td>
+                </tr>
+                <tr>
+                <td>date</td>
+                <td></td>
+                <td>link</td>
+                </tr>
+            </tbody>
                 </table>
             </div>
             <!-- Таблица новостей ЭНД -->
 
             </div>
-            <div>5</div>
-            <div>6</div>
+            <div class="card footer-card">Подвал</div>
         </div>
     </div>
 </body>
